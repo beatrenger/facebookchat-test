@@ -1,0 +1,6 @@
+{
+    "appSecret": "7b47850b4cd7b47aa51586110930e373",
+    "pageAccessToken": "EAAEqjHuaRBcBADx3x75kCEQKmFVyXDzOloxWSsYEW3NSzEwO9d5YPDSb39Q1eHyP5OEXoa0LqIYlesxpSBdAwCBi3QQPsLOzgQGhksyf4hvF7ymhipNFWdZBPc4ZAaBpMwmZCaFCLS4iAhZA2CNmSp2MNEPqVYnmR7BnzVNyMQZDZD",
+    "validationToken": "my_voice_is_my_passwords",
+    "serverURL": "https://facebook-chat-xocolate.herokuapp.com/"
+}
