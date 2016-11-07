@@ -472,7 +472,7 @@ function sendResponseMessage(recipientId){
                 id: recipientId
               },
               message: {
-                text: messageText,
+                text: "Hello Good sir!",
                 metadata: "DEVELOPER_DEFINED_METADATA"
               }
             };
