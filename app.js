@@ -455,10 +455,10 @@ function sendGifMessage(recipientId) {
 
 function sendResponseMessage(recipientId){
           // Optionally the request above could also be done as
-          axios.get('/user', {
+          axios.get('https://graph.facebook.com/v2.6/'+recipientId, {
               params: {
-                ID: 12345
-              }
+                access_token:      PAGE_ACCESS_TOKEN
+                       }
             })
             .then(function (response) {
               console.log(response);
@@ -466,6 +466,17 @@ function sendResponseMessage(recipientId){
             .catch(function (error) {
               console.log(error);
             });
+
+            var messageData = {
+              recipient: {
+                id: recipientId
+              },
+              message: {
+                text: messageText,
+                metadata: "DEVELOPER_DEFINED_METADATA"
+              }
+            };
+            callSendAPI(messageData);
 }
 
 /*
