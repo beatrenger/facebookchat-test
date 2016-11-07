@@ -454,6 +454,7 @@ function sendGifMessage(recipientId) {
 }
 
 function sendResponseMessage(recipientId){
+  var userinfo;
           // Optionally the request above could also be done as
           axios.get('https://graph.facebook.com/v2.6/'+recipientId, {
               params: {
@@ -461,7 +462,9 @@ function sendResponseMessage(recipientId){
                        }
             })
             .then(function (response) {
-              console.log(response);
+              console.log(response.data);
+
+
             })
             .catch(function (error) {
               console.log(error);
@@ -472,7 +475,7 @@ function sendResponseMessage(recipientId){
                 id: recipientId
               },
               message: {
-                text: "Hello Good sir!",
+                text: "Hello Good Mast",
                 metadata: "DEVELOPER_DEFINED_METADATA"
               }
             };
