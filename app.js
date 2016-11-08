@@ -462,7 +462,7 @@ function sendResponseMessage(recipientId){
                        }
             })
             .then(function (response) {
-              console.log(response.data);
+              console.log(response.data['first_name']);
 
 
             })
