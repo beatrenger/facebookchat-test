@@ -121,6 +121,15 @@ app.post('/webhook', function (req, res) {
 });
 
 /*
+ // Setting up Boot basic User Interactions.
+ // Basic commands and greetings settings.
+*/
+app.post('/facebook_settings', function (req, res) {
+
+
+});
+
+/*
  * This path is used for account linking. The account linking call-to-action
  * (sendAccountLinking) is pointed to this URL.
  *
@@ -463,7 +472,7 @@ function sendResponseMessage(recipientId){
             })
             .then(function (response) {
               console.log(response.data['first_name']);
-
+              console.log('asdkjhfkajsdfhkjasdfasdjkhfsjkhadfjkhsadfjkhasdjkhfajkhsdfjkhasdfkjasdklfj');
 
             })
             .catch(function (error) {
