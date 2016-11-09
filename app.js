@@ -472,7 +472,7 @@ function sendResponseMessage(recipientId){
             })
             .then(function (response) {
               console.log(response.data['first_name']);
-                userinfo = response.data;
+                // userinfo = response.data;
             })
             .catch(function (error) {
               console.log(error);
@@ -483,7 +483,7 @@ function sendResponseMessage(recipientId){
                 id: recipientId
               },
               message: {
-                text: "Hello Good Master"+ userinfo.data['first_name']+' '+ userinfo.data['last_name'],
+                text: "Hello Good Master",
                 metadata: "DEVELOPER_DEFINED_METADATA"
               }
             };
