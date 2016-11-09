@@ -472,8 +472,7 @@ function sendResponseMessage(recipientId){
             })
             .then(function (response) {
               console.log(response.data['first_name']);
-              console.log('asdkjhfkajsdfhkjasdfasdjkhfsjkhadfjkhsadfjkhasdjkhfajkhsdfjkhasdfkjasdklfj');
-
+                userinfo = response.data;
             })
             .catch(function (error) {
               console.log(error);
@@ -484,7 +483,7 @@ function sendResponseMessage(recipientId){
                 id: recipientId
               },
               message: {
-                text: "Hello Good Mast",
+                text: "Hello Good Master"+ userinfo.data['first_name']+' '+ userinfo.data['last_name'],
                 metadata: "DEVELOPER_DEFINED_METADATA"
               }
             };
