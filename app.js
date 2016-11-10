@@ -473,6 +473,7 @@ function sendResponseMessage(recipientId){
             .then(function (response) {
               console.log(response.data['first_name']);
                userinfo = response.data;
+               console.log(userinfo);
             })
             .catch(function (error) {
               console.log(error);
