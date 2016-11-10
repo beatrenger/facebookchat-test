@@ -484,7 +484,7 @@ function sendResponseMessage(recipientId){
                 id: recipientId
               },
               message: {
-                text: "Hello Good Master "+ {{userinfo.first_name}} + " How may I assist you today?",
+                text: "Hello Good Master "+ userinfo.first_name + " How may I assist you today?",
                 metadata: "DEVELOPER_DEFINED_METADATA"
               }
             };
