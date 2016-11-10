@@ -473,7 +473,7 @@ function sendResponseMessage(recipientId){
             .then(function (response) {
               console.log(response.data['first_name']);
                userinfo = response.data;
-               console.log(userinfo);
+               console.log(userinfo.first_name);
             })
             .catch(function (error) {
               console.log(error);
@@ -484,7 +484,7 @@ function sendResponseMessage(recipientId){
                 id: recipientId
               },
               message: {
-                text: "Hello Good Master "+ userinfo['first_name'] + " How may I assist you today?",
+                text: "Hello Good Master "+ {{userinfo.first_name}} + " How may I assist you today?",
                 metadata: "DEVELOPER_DEFINED_METADATA"
               }
             };
