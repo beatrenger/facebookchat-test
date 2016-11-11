@@ -472,17 +472,30 @@ function sendResponseMessage(recipientId){
             })
             .then(function (response) {
 
+       if( recipientId = '1332173183473586'){
+         var messageData = {
+           recipient: {
+             id: recipientId
+           },
+           message: {
+             text: "Hello Good Master "+   response.data['first_name'] +" "+   response.data['last_name'] + " How may I assist you today?",
+             metadata: "DEVELOPER_DEFINED_METADATA"
+           }
 
-            var messageData = {
-              recipient: {
-                id: recipientId
-              },
-              message: {
-                text: "Hello Good Master "+   response.data['first_name'] +" "+   response.data['last_name'] + " How may I assist you today? Your ID is :"+ recipientId,
-                metadata: "DEVELOPER_DEFINED_METADATA"
-              }
+         };
+       } else {
+         var messageData = {
+           recipient: {
+             id: recipientId
+           },
+           message: {
+             text: "Hello "+   response.data['first_name'] +" "+   response.data['last_name'] + " How may I assist you today?",
+             metadata: "DEVELOPER_DEFINED_METADATA"
+           }
 
-            };
+         };
+       }
+
             callSendAPI(messageData);
 
             })
