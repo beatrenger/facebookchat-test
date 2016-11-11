@@ -472,7 +472,7 @@ function sendResponseMessage(recipientId){
             })
             .then(function (response) {
 
-                  if ( response.data['first_name'] == Alan &&  response.data['last_name'] == Renteria)
+
             var messageData = {
               recipient: {
                 id: recipientId
