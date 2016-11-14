@@ -472,6 +472,9 @@ function sendResponseMessage(recipientId){
             })
             .then(function (response) {
 
+
+
+
        if( recipientId = '1332173183473586'){
          var messageData = {
            recipient: {
@@ -483,6 +486,30 @@ function sendResponseMessage(recipientId){
            }
 
          };
+
+
+                 var ConversationV1 = require('watson-developer-cloud/conversation/v1');
+
+        var conversation = new ConversationV1({
+        username: 'arenteriaperulles@outlook.com',
+        password: 'doubamaska212',
+        version_date: '2016-07-01'
+        });
+
+        conversation.message({
+        input: { text: 'what is chocolate?' },
+        workspace_id: '39676a45-0af0-4b90-b016-c2d059545566'
+        }, function(err, response) {
+          if (err) {
+            console.error(err);
+          } else {
+            console.log(JSON.stringify(response, null, 2));
+          }
+        });
+
+
+
+
        } else {
          var messageData = {
            recipient: {
