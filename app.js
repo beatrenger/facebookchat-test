@@ -492,7 +492,7 @@ function sendResponseMessage(recipientId){
 
         var conversation = new ConversationV1({
           password: "fMkVEDl8tUSD",
-          username: "7f00f7b8-78b8-468e-98cf-402e4a613e55"
+          username: "7f00f7b8-78b8-468e-98cf-402e4a613e55",
           version_date: '2016-07-01'
         });
 
