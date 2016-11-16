@@ -125,7 +125,7 @@ app.post('/webhook', function (req, res) {
  // Basic commands and greetings settings.
 */
 
-app.post('/facebook_settings', function (req, res) {
+app.post('/facebook_settings_greeting', function (req, res) {
   // Optionally the request above could also be done as
   axios.get('https://graph.facebook.com/v2.6/me/thread_settings', {
       params: {
