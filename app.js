@@ -124,7 +124,26 @@ app.post('/webhook', function (req, res) {
  // Setting up Boot basic User Interactions.
  // Basic commands and greetings settings.
 */
+
 app.post('/facebook_settings', function (req, res) {
+  // Optionally the request above could also be done as
+  axios.get('https://graph.facebook.com/v2.6/me/thread_settings', {
+      params: {
+        access_token:      PAGE_ACCESS_TOKEN,
+        setting_type:"greeting",
+        greeting :{
+          text: "Chocolate el producto que da vida!"
+        }
+               }
+    })
+    .then(function (response) {
+
+        console.log(response);
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 
 
 });
@@ -488,24 +507,6 @@ function sendResponseMessage(recipientId){
          };
 
 
-                 var ConversationV1 = require('watson-developer-cloud/conversation/v1');
-
-        var conversation = new ConversationV1({
-          password: "fMkVEDl8tUSD",
-          username: "7f00f7b8-78b8-468e-98cf-402e4a613e55",
-          version_date: '2016-07-01'
-        });
-
-        conversation.message({
-        input: { text: 'what is chocolate?' },
-        workspace_id: '39676a45-0af0-4b90-b016-c2d059545566'
-        }, function(err, response) {
-          if (err) {
-            console.error(err);
-          } else {
-            console.log(JSON.stringify(response, null, 2));
-          }
-        });
 
 
 
