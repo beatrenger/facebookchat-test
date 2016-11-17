@@ -153,8 +153,7 @@ app.get('/facebook_settings_greeting', function (req, res) {
          "text": "Chocolate el producto que da vida!"
         }
     },
-    method: 'POST',
-    json: messageData
+    method: 'POST'
 
   }, function (error, response, body) {
     if (!error && response.statusCode == 200) {
