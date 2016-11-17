@@ -127,9 +127,9 @@ app.post('/webhook', function (req, res) {
 
 app.get('/facebook_settings_greeting', function (req, res) {
   // Optionally the request above could also be done as
-  axios.get('https://graph.facebook.com/v2.6/me/thread_settings', {
+  axios.post('https://graph.facebook.com/v2.6/me/thread_settings', {
       params: {
-        access_token:      PAGE_ACCESS_TOKEN,
+        access_token: PAGE_ACCESS_TOKEN,
         setting_type:"greeting",
         greeting :{
           text: "Chocolate el producto que da vida!"
@@ -139,6 +139,7 @@ app.get('/facebook_settings_greeting', function (req, res) {
     .then(function (response) {
 
         console.log(response);
+      document.write(response);
 
     })
     .catch(function (error) {
