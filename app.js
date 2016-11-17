@@ -127,22 +127,51 @@ app.post('/webhook', function (req, res) {
 
 app.get('/facebook_settings_greeting', function (req, res) {
   // Optionally the request above could also be done as
-  axios.post('https://graph.facebook.com/v2.6/me/thread_settings?access_token='+PAGE_ACCESS_TOKEN, {
-      params: {
-        setting_type: "greeting",
-        greeting :  {
-          "text": "Chocolate el producto que da vida!"
+  // axios.post('https://graph.facebook.com/v2.6/me/thread_settings?access_token='+PAGE_ACCESS_TOKEN, {
+  //     params: {
+  //       setting_type: "greeting",
+  //       greeting :  {
+  //         "text": "Chocolate el producto que da vida!"
+  //       }
+  //              }
+  //   })
+  //   .then(function (response) {
+  //
+  //       console.log(response);
+  //
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+
+
+  request({
+    uri: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: PAGE_ACCESS_TOKEN,
+      setting_type: "greeting",
+          greeting :  {
+         "text": "Chocolate el producto que da vida!"
         }
-               }
-    })
-    .then(function (response) {
+    },
+    method: 'POST',
+    json: messageData
 
-        console.log(response);
+  }, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      var recipientId = body.recipient_id;
+      var messageId = body.message_id;
 
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      if (messageId) {
+        console.log("Successfully sent message with id %s to recipient %s",
+          messageId, recipientId);
+      } else {
+      console.log("Successfully called Send API for recipient %s",
+        recipientId);
+      }
+    } else {
+      console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
+    }
+  });
 
 
 });
