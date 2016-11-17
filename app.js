@@ -130,9 +130,9 @@ app.get('/facebook_settings_greeting', function (req, res) {
   axios.post('https://graph.facebook.com/v2.6/me/thread_settings', {
       params: {
         access_token: PAGE_ACCESS_TOKEN,
-        setting_type:"greeting",
-        greeting :{
-          text: "Chocolate el producto que da vida!"
+        setting_type: "greeting",
+        greeting :  {
+          "text": "Chocolate el producto que da vida!"
         }
                }
     })
